@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Link Volumes · aftersim</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="![bandwidth banner](/docs/docs/assets/links.jpg)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Link Volumes · aftersim"/><meta property="og:type" content="website"/><meta property="og:url" content="https://aftersim.github.io/docs/"/><meta property="og:description" content="![bandwidth banner](/docs/docs/assets/links.jpg)"/><meta property="og:image" content="https://aftersim.github.io/docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/docs/img/aftersim-logo-64.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://aftersim.github.io/docs/blog/atom.xml" title="aftersim Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://aftersim.github.io/docs/blog/feed.xml" title="aftersim Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Roboto+Slab:400,400i,700"/><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/"><img class="logo" src="/docs/img/aftersim-logo.png" alt="aftersim"/><h2 class="headerTitleWithLogo">aftersim</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/docs/aftersim-intro" target="_self">Documentation</a></li><li class=""><a href="/docs/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/aftersim/aftersim" target="_blank">Github</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Plugin Reference</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/aftersim-intro">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/file-management">File Management</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/scripts">Conversion Scripts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugin Reference</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/aggregate-od">Aggregate O/D Flows</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/calculation-tables">Calculation Tables</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/carrier-viewer">Carrier Viewer</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/drt-vehicles">DRT Vehicle Animation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/docs/link-vols">Link Volumes</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/sankey">Sankey Diagrams</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/transit-supply">Transit Supply</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/vega-lite">Vega-Lite Charts</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/video">Video Player</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/xy-hexagons">XY Hexagons</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Developer Guide</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/docs/aftersim-installation">Installation &amp; Setup</a></li><li class="navListItem"><a class="navItem" href="/docs/docs/plugin-guide">Plugin Writing Guide</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Link Volumes</h1></header><article><div><span><p><img src="/docs/docs/assets/links.jpg" alt="bandwidth banner">
+<em>Bandwidth plot</em></p>
+<p>Link bandwidth plot plugin. Supports regular bandwidth plots as well as difference and sum plots when comparing two alternatives.</p>
+<h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<p>A file named <code>viz-links-*.yml</code> must be present in working folder. Each yml file matching that pattern will produce a separate link volume diagram.</p>
+<p><strong>viz-links-example.yml</strong></p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">title:</span> <span class="hljs-string">"Passagieraufkommen in Sammeltaxis"</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">"Stündliches Passagieraufkommen in Sammeltaxis"</span>
+<span class="hljs-attr">csvFile:</span> <span class="hljs-string">"../base/hourlyTrafficVolume_passengers_VEHICLEFILTER-drt-vehicles.csv"</span>
+<span class="hljs-attr">csvFile2:</span> <span class="hljs-string">"Vu-DRT-1.link_hourlyTrafficVolume_passengers_VEHICLEFILTER-drt-vehicles.csv"</span>
+<span class="hljs-attr">geojsonFile:</span> <span class="hljs-string">../vulkaneifel-network.geo.json.gz</span>
+<span class="hljs-attr">shpFile:</span> <span class="hljs-string">"vulkaneifel-network/vulkaneifel-network.shp"</span>
+<span class="hljs-attr">dbfFile:</span> <span class="hljs-string">"vulkaneifel-network/vulkaneifel-network.dbf"</span>
+<span class="hljs-attr">projection:</span> <span class="hljs-string">"EPSG:25832"</span>
+<span class="hljs-attr">widthFactor:</span> <span class="hljs-number">0.01</span>
+<span class="hljs-attr">sampleRate:</span> <span class="hljs-number">0.25</span>
+<span class="hljs-attr">thumbnail:</span> <span class="hljs-string">thumbnail-roads.jpg</span>
+<span class="hljs-attr">shpFileIdProperty:</span> <span class="hljs-string">"ID"</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="yaml-fields-explained"></a><a href="#yaml-fields-explained" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>YAML fields explained</h2>
+<hr>
+<p><strong>geojsonFile:</strong> geojson-converted network file. Use the python script in <code>scripts/create-network.py</code> to create a geojson network from a matsim network.xml.gz file.</p>
+<ul>
+<li>Command is <code>python3 create-network.py [mynetwork.xml.gz]</code></li>
+<li>and will create a file with the name <code>mynetwork.json.gz</code>.</li>
+</ul>
+<p><strong>shpFile,dbfFile:</strong> (deprecated) filenames for the alternative, slower network file in shapefile format. Don't use this if you have created the geojson network file above.</p>
+<p><strong>csvFile</strong>: dataset, or &quot;base&quot; dataset for difference plots</p>
+<p><strong>csvFile2:</strong> (optional) &quot;project&quot; dataset for difference plots</p>
+<p><strong>sampleRate:</strong> MATSim simulation sample rate; i.e. a 1% sample should use <code>0.01</code> here so that volumes are scaled properly</p>
+<p><strong>shpFileIdProperty:</strong> property name of field in Shapefile which contains area ID for linking shapefile regions to csvFile data.</p>
+<p>Note: All filename fields can refer to parent folders using <code>../</code>.</p>
+<ul>
+<li>example: <code>geojsonfile: '../networks/base.json.gz'</code></li>
+</ul>
+<p>This works as far up the hierarchy as the base of the public-svn specified in <code>svnConfig.js</code> but no further.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="required-model-output-post-processing"></a><a href="#required-model-output-post-processing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Required model output post-processing</h2>
+<p><strong>geoJsonFile</strong> - The standard MATSim network.xml.gz file is very inefficient and slow to load. Create the <code>geoJsonFile</code> network file using the following Python script:</p>
+<ul>
+<li><a href="https://aftersim.github.io/docs/scripts/create-network.py">create-network.py</a></li>
+<li>You will need to install Python 3 to use this script.</li>
+</ul>
+<p><strong>csvFile</strong> - Use whatever method you like to produce a CSV for your data. The first line of the file should contain labels of the column names, e.g. the hour of the day, etc.</p>
+<ul>
+<li>First column must include the link ID, identical to the link ID in the network file</li>
+<li>All remaining columns will be available and will be labeled accordingly. The viz will also produce a sum &quot;total&quot; automatically</li>
+</ul>
+<p><strong>example-data.csv</strong></p>
+<pre><code class="hljs">link;<span class="hljs-number">01</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">02</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">03</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">04</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">05</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">06</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">07</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">08</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">09</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">10</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">11</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">12</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">13</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">14</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">15</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">16</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">17</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">18</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">19</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">20</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">21</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">22</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">23</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">24</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">25</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">26</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">27</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">28</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>;<span class="hljs-number">30</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>
+<span class="hljs-number">72539930</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">7</span>;<span class="hljs-number">13</span>;<span class="hljs-number">20</span>;<span class="hljs-number">16</span>;<span class="hljs-number">13</span>;<span class="hljs-number">15</span>;<span class="hljs-number">18</span>;<span class="hljs-number">17</span>;<span class="hljs-number">32</span>;<span class="hljs-number">25</span>;<span class="hljs-number">29</span>;<span class="hljs-number">55</span>;<span class="hljs-number">53</span>;<span class="hljs-number">43</span>;<span class="hljs-number">48</span>;<span class="hljs-number">12</span>;<span class="hljs-number">12</span>;<span class="hljs-number">10</span>;<span class="hljs-number">4</span>;<span class="hljs-number">4</span>;<span class="hljs-number">4</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>
+<span class="hljs-number">42868713</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">1</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">1</span>;<span class="hljs-number">1</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>
+<span class="hljs-number">72539936</span>;<span class="hljs-number">0</span>;<span class="hljs-number">1</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">17</span>;<span class="hljs-number">57</span>;<span class="hljs-number">63</span>;<span class="hljs-number">52</span>;<span class="hljs-number">51</span>;<span class="hljs-number">47</span>;<span class="hljs-number">49</span>;<span class="hljs-number">59</span>;<span class="hljs-number">78</span>;<span class="hljs-number">67</span>;<span class="hljs-number">73</span>;<span class="hljs-number">113</span>;<span class="hljs-number">99</span>;<span class="hljs-number">98</span>;<span class="hljs-number">107</span>;<span class="hljs-number">47</span>;<span class="hljs-number">38</span>;<span class="hljs-number">36</span>;<span class="hljs-number">24</span>;<span class="hljs-number">13</span>;<span class="hljs-number">4</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>
+<span class="hljs-number">6173553</span>;<span class="hljs-number">0</span>;<span class="hljs-number">1</span>;<span class="hljs-number">0</span>;<span class="hljs-number">3</span>;<span class="hljs-number">5</span>;<span class="hljs-number">1</span>;<span class="hljs-number">10</span>;<span class="hljs-number">10</span>;<span class="hljs-number">9</span>;<span class="hljs-number">3</span>;<span class="hljs-number">8</span>;<span class="hljs-number">4</span>;<span class="hljs-number">6</span>;<span class="hljs-number">3</span>;<span class="hljs-number">4</span>;<span class="hljs-number">9</span>;<span class="hljs-number">5</span>;<span class="hljs-number">7</span>;<span class="hljs-number">4</span>;<span class="hljs-number">2</span>;<span class="hljs-number">1</span>;<span class="hljs-number">1</span>;<span class="hljs-number">1</span>;<span class="hljs-number">2</span>;<span class="hljs-number">0</span>;<span class="hljs-number">1</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>;<span class="hljs-number">0</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 7/14/2021</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/docs/drt-vehicles"><span class="arrow-prev">← </span><span>DRT Vehicle Animation</span></a><a class="docs-next button" href="/docs/docs/sankey"><span>Sankey Diagrams</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#usage">Usage</a></li><li><a href="#yaml-fields-explained">YAML fields explained</a></li><li><a href="#required-model-output-post-processing">Required model output post-processing</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docs/" class="nav-home"><img src="/docs/img/vsp-logo-300dpi.png" alt="aftersim"/></a><div><h5>Docs</h5><a href="/docs/docs/aftersim-intro">Getting Started</a><a href="/docs/docs/aftersim-installation">Developer Guide</a><a href="/docs/blog">Latest Updates</a></div><div><h5>More</h5><a href="https://www.vsp.tu-berlin.de">VSP Home</a><a href="https://matsim.org">MATSim.org</a><a href="https://github.com/aftersim/aftersim.github.io">⭐ us on GitHub!</a></div></section><section class="copyright">Copyright © 2021 VSP, TU Berlin</section></footer></div></body></html>

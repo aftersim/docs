@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://aftersim.github.io/docs/blog</id>
+    <title>aftersim Blog</title>
+    <updated>2021-01-27T06:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://aftersim.github.io/docs/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest aftersim news and events.</subtitle>
+    <logo>https://aftersim.github.io/docs/img/aftersim-logo.png</logo>
+    <rights>Copyright © 2021 VSP, TU Berlin</rights>
+    <entry>
+        <title type="html"><![CDATA[Using aftersim with local files on your PC/laptop]]></title>
+        <id>https://aftersim.github.io/docs/blog/2021/01/27/local-files.html</id>
+        <link href="https://aftersim.github.io/docs/blog/2021/01/27/local-files.html"/>
+        <updated>2021-01-27T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>You don't need to set up any external file servers or upload outputs to subversion to use aftersim: you can explore the files stored on your own laptop right away.</p>
+<p>This is great for debugging runs and for files that you cannot make public (or that you don't want to make public just yet).</p>
+<p>All you need to do is run the <strong>Mini File Server</strong> program on your local machine, in the folder that you want aftersim to have access to. It is a simple HTTP web server that lets your browser access that folder (and only that folder) via <code>localhost:8000</code>. Your machine's default firewall will prevent any outside network or internet access.</p>
+<p>Here's how to set it up.</p>
+]]></summary>
+        <author>
+            <name>Billy Charlton</name>
+            <uri>https://github.com/billyc</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Welcome to aftersim 👋]]></title>
+        <id>https://aftersim.github.io/docs/blog/2021/01/15/hello.html</id>
+        <link href="https://aftersim.github.io/docs/blog/2021/01/15/hello.html"/>
+        <updated>2021-01-15T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>New documentation site! I'm excited to get this info &quot;out there&quot;, in the hopes that more people will find aftersim useful after reading these pages.</p> <p>Let me know if you see mistakes or have suggestions on what topics need to be added. There'...</p>]]></summary>
+        <author>
+            <name>Billy Charlton</name>
+            <uri>https://github.com/billyc</uri>
+        </author>
+    </entry>
+</feed>
